@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Country Flag Battle</title>
+<h1>Country Flag Battle</h1>
 <style>
 body {
   text-align: center;
@@ -15,15 +15,22 @@ h1 {
   margin-top: 20px;
 }
 
-#arena {
-  margin: 30px auto;
-  width: 400px;
-  height: 400px;
+##arena {
+  width: 350px;
+  height: 350px;
+  margin: 40px auto;
   border-radius: 50%;
-  border: 5px solid white;
   position: relative;
-  overflow: hidden;
+
+  /* Circle ka cut part */
+  background: conic-gradient(
+    transparent 0deg 40deg,
+    #222 40deg 360deg
+  );
+
+  animation: spin 6s linear infinite;
 }
+
 
 .flag {
   width: 60px;
@@ -55,8 +62,17 @@ button {
 <div id="arena"></div>
 <div id="winner"></div>
 
-<script>
-const flags = ["🇮🇳","🇺🇸","🇯🇵","🇧🇷","🇫🇷","🇩🇪","🇦🇺","🇨🇦","🇬🇧","🇮🇹"];
+<script><script>
+
+const flags = [
+"🇮🇳","🇺🇸","🇨🇳","🇯🇵","🇷🇺","🇬🇧","🇫🇷","🇩🇪","🇧🇷",
+"🇨🇦","🇦🇺","🇮🇹","🇪🇸","🇰🇷","🇵🇱","🇹🇷","🇸🇦","🇿🇦",
+"🇳🇱","🇨🇭","🇸🇪","🇳🇴","🇺🇦","🇵🇰","🇧🇩","🇲🇾","🇸🇬",
+"🇦🇪","🇶🇦","🇲🇽","🇦🇷","🇨🇱","🇵🇪","🇬🇷","🇧🇪","🇦🇹",
+"🇫🇮","🇩🇰"
+];
+
+</script>"];
 let activeFlags = [];
 
 function startGame() {
